@@ -3,6 +3,7 @@ import io
 import re
 import pdfplumber
 from docx import Document
+from docx.shared import Inches
 import streamlit as st
 
 # Set up the web page title, icon, and layout profile
@@ -275,6 +276,15 @@ def clean_text_for_matching(text):
     cleaned = text.replace('"', '').replace('/', ' ').replace('.', ' ').replace('-', ' ')
     return " ".join(cleaned.lower().split())
 
+def apply_column_widths(table):
+    """Explicitly assigns structural widths across word table grid cells."""
+    # Index 0 (Name) gets a large space allocation (4.0 inches)
+    # Indices 1, 2, 3 (Metrics) get compact spacing layouts (1.0 inch each)
+    widths = [Inches(4.0), Inches(1.0), Inches(1.0), Inches(1.0)]
+    for row in table.rows:
+        for idx, width in enumerate(widths):
+            row.cells[idx].width = width
+
 # UI Header Layout Elements
 st.markdown('<div class="main-title">📋 රුහුණු භාණ්ඩ ලැයිස්තුව</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-title">ඔබේ Picklist PDF එක සිංහල Word ගොනුවක් බවට ක්ෂණිකව පරිවර්තනය කරන්න</div>', unsafe_allow_html=True)
@@ -294,7 +304,7 @@ if uploaded_file is not None:
         table = doc.add_table(rows=1, cols=4)
         table.style = 'Table Grid'
         
-        # New column names mapping
+        # Define base layout headers
         hdr_cells = table.rows[0].cells
         hdr_cells[0].text = 'භාණ්ඩය'
         hdr_cells[1].text = 'නොමිලේ'
@@ -372,6 +382,9 @@ if uploaded_file is not None:
                                     })
                                     matched_count += 1
                                     break
+        
+        # Enforce explicitly customized column widths in Word document output
+        apply_column_widths(table)
 
     if matched_count > 0:
         st.success(f"🎉 සාර්ථකයි! ගැළපෙන භාණ්ඩ පේළි {matched_count} ක් සාර්ථකව පරිවර්තනය කරන ලදී.")
