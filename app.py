@@ -112,14 +112,10 @@ PRODUCT_MAPPING = {
     "meat curry mix 250g": "මස් කරි කුඩු 250g",
     "meat curry mix 250gm": "මස් කරි කුඩු 250g",
     
-    # Updated String Hopper & Mixture variations to support normalization fallbacks
-    "w/r string hopper flour 1kg": "සුදු සහල් ඉඳිආප්ප පිටි 1Kg",
+    # Standardized lowercase keys to match structural text sanitization rules
     "w/r string hopper flour 1kg": "සුදු සහල් ඉඳිආප්ප පිටි 1Kg",
     "r/r string hopper flour 1kg": "රතු සහල් ඉඳිආප්ප පිටි 1Kg",
-    "r/r string hopper flour 1kg": "රතු සහල් ඉඳිආප්ප පිටි 1Kg",
     "idliyas mixture 400gm": "ඉඩ්ලියාස් මිශ්‍රණය 400gm",
-    "idliyas mixture 400gm": "ඉඩ්ලියාස් මිශ්‍රණය 400gm",
-    "roasted r/r string hopper flour 700gm": "බැදපු රතු සහල් ඉඳිආප්ප පිටි 700gm",
     "roasted r/r string hopper flour 700gm": "බැදපු රතු සහල් ඉඳිආප්ප පිටි 700gm",
     
     "chilli powder 100gm": "මිරිස් කුඩු - 24x100gm",
@@ -218,7 +214,7 @@ PRODUCT_MAPPING = {
     "plums 100 g": "ප්ලම්ස් 100 g",
     "plums 100gm": "ප්ලම්ස් 100 g",
     "sukiri 100 g": "සූකිරි 100 g",
-    "sukiri 100gm": "සූකිරි 100 g",
+    "sukiri 100gm": "සූkිරි 100 g",
     "corriander 100 g": "කොත්තමල්ලි 100 g",
     "coriander seed 100gm": "කොත්තමල්ලි 100 g",
     "sago 100 g": "සව් 100 g",
@@ -423,4 +419,4 @@ if uploaded_file is not None:
             use_container_width=True
         )
     else:
-        st.error("⚠️ දෝෂයකි: අප්ලෝඩ් කරන ලද PDF ගොනුවේ තිබූ කිසිදු භාණ්ඩයක් අපගේ නාමාවලිය සමඟ ගැළපුණේ නැත. කරුණාකර වෙනත් ගොනුවක් උත්සාහ කරන්න.")]
+        st.error("⚠️ දෝෂයකි: අප්ලෝඩ් කරන ලද PDF ගොනුවේ තිබූ කිසිදු භාණ්ඩයක් අපගේ නාමාවලිය සමඟ ගැළපුණේ නැත. කරුණාකර වෙනත් ගොනුවක් උත්සාහ කරන්න.")
