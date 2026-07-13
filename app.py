@@ -111,10 +111,17 @@ PRODUCT_MAPPING = {
     "meat curry mix 25gm": "මස් කරි කුඩු 25 g",
     "meat curry mix 250g": "මස් කරි කුඩු 250g",
     "meat curry mix 250gm": "මස් කරි කුඩු 250g",
-    "W/R String Hopper Flour 1Kg" : "සුදු හාල් ඉදි අප්ප පිටි 1kg",
-    "R/R String Hopper Flour 1Kg": "රතු සහල් ඉදිආප්ප පිටි 1kg",
-    "Idliyas Mixture 400gm": "ඉටලි මිෂ්චර් 400gm",
-    "Roasted R/R String Hopper Flour 700gm": "බැදපු රතු සහල් ඉදිආප්ප පිටි 700gm",
+    
+    # Updated String Hopper & Mixture variations to support normalization fallbacks
+    "w/r string hopper flour 1kg": "සුදු සහල් ඉඳිආප්ප පිටි 1Kg",
+    "w/r string hopper flour 1kg": "සුදු සහල් ඉඳිආප්ප පිටි 1Kg",
+    "r/r string hopper flour 1kg": "රතු සහල් ඉඳිආප්ප පිටි 1Kg",
+    "r/r string hopper flour 1kg": "රතු සහල් ඉඳිආප්ප පිටි 1Kg",
+    "idliyas mixture 400gm": "ඉඩ්ලියාස් මිශ්‍රණය 400gm",
+    "idliyas mixture 400gm": "ඉඩ්ලියාස් මිශ්‍රණය 400gm",
+    "roasted r/r string hopper flour 700gm": "බැදපු රතු සහල් ඉඳිආප්ප පිටි 700gm",
+    "roasted r/r string hopper flour 700gm": "බැදපු රතු සහල් ඉඳිආප්ප පිටි 700gm",
+    
     "chilli powder 100gm": "මිරිස් කුඩු - 24x100gm",
     "chilli powder 50gm": "මිරිස් කුඩු - 40x50gm",
     "chilli powder 250gm": "මිරිස් කුඩු - 12x250gm",
@@ -158,7 +165,7 @@ PRODUCT_MAPPING = {
     "undu flour 200 g": "උඳු පිටි 200 g",
     "undu flour 200gm": "උඳු පිටි 200 g",
     "kurakkan flour 400 g": "කුරක්කන් පිටි 400 g",
-    "Kurakkan Flour 400g":"කුරක්කන් පිටි ග්‍රෑම් 400",
+    "kurakkan flour 400g":"කුරක්කන් පිටි ග්‍රෑම් 400",
     "kurakkan flour 400gm": "කුරක්කන් පිටි 400 g",
     "kurakkan flour 200 gm": "කුරක්කන් පිටි 200 gm",
     "kurakkan flour 200g": "කුරක්කන් පිටි 200 gm",
@@ -283,8 +290,6 @@ def clean_text_for_matching(text):
 
 def apply_column_widths(table):
     """Explicitly assigns structural widths across word table grid cells."""
-    # Index 0 (Name) gets a large space allocation (4.0 inches)
-    # Indices 1, 2, 3 (Metrics) get compact spacing layouts (1.0 inch each)
     widths = [Inches(4.0), Inches(1.0), Inches(1.0), Inches(1.0)]
     for row in table.rows:
         for idx, width in enumerate(widths):
@@ -418,4 +423,4 @@ if uploaded_file is not None:
             use_container_width=True
         )
     else:
-        st.error("⚠️ දෝෂයකි: අප්ලෝඩ් කරන ලද PDF ගොනුවේ තිබූ කිසිදු භාණ්ඩයක් අපගේ නාමාවලිය සමඟ ගැළපුණේ නැත. කරුණාකර වෙනත් ගොනුවක් උත්සාහ කරන්න.")
+        st.error("⚠️ දෝෂයකි: අප්ලෝඩ් කරන ලද PDF ගොනුවේ තිබූ කිසිදු භාණ්ඩයක් අපගේ නාමාවලිය සමඟ ගැළපුණේ නැත. කරුණාකර වෙනත් ගොනුවක් උත්සාහ කරන්න.")]
