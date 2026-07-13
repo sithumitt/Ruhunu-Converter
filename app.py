@@ -113,10 +113,10 @@ PRODUCT_MAPPING = {
     "meat curry mix 250gm": "මස් කරි කුඩු 250g",
     
     # Standardized lowercase keys to match structural text sanitization rules
-    "w/r string hopper flour 1kg": "සුදු සහල් ඉඳිආප්ප පිටි 1Kg",
-    "r/r string hopper flour 1kg": "රතු සහල් ඉඳිආප්ප පිටි 1Kg",
+    "w r string hopper flour 1kg": "සුදු සහල් ඉඳිආප්ප පිටි 1Kg",
+    "r r string hopper flour 1kg": "රතු සහල් ඉඳිආප්ප පිටි 1Kg",
     "idliyas mixture 400gm": "ඉඩ්ලියාස් මිශ්‍රණය 400gm",
-    "roasted r/r string hopper flour 700gm": "බැදපු රතු සහල් ඉඳිආප්ප පිටි 700gm",
+    "roasted r r string hopper flour 700gm": "බැදපු රතු සහල් ඉඳිආප්ප පිටි 700gm",
     
     "chilli powder 100gm": "මිරිස් කුඩු - 24x100gm",
     "chilli powder 50gm": "මිරිස් කුඩු - 40x50gm",
